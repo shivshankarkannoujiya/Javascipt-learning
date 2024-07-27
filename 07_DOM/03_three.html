@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM learning</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+
+<script>
+    // </CREATING ELEMENTS>
+
+    // TODO: create a <div> element
+    const div = document.createElement('div');
+    console.log(div);
+
+
+    // TODO: set properties to <div>
+    div.className = 'main';
+    div.id = Math.round(Math.random() * 10 + 1);
+
+
+    // TODO: set custom Attribute <div>
+    div.setAttribute('title','generated title');
+
+
+    
+    // TODO: set style to <div>
+    div.style.backgroundColor = 'green';
+    div.style.padding = '12px';
+
+
+    // TODO: insert Text in the <div>
+    // div.innerText = 'Element creation';
+    const addText =  document.createTextNode('Element creation');
+    div.appendChild(addText);
+
+
+    // TODO:
+    // We have created child but it's in Memory but not displaying on page
+    // Tell to the document that child ko apne pas attach kro
+    document.body.appendChild(div);
+
+</script>
+</html>

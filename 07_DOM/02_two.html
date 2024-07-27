@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM learning</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+
+<script>
+
+    // </ TRAVERSING >    
+
+    const parent = document.querySelector('.parent');
+
+    //TODO: [children] property
+    // console.log(parent);
+    // console.log(parent.children); // HTMLCollection
+    // console.log(parent.children[1].innerHTML); 
+
+
+    // TODO: loop on HTMLCollection
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML);
+    // }
+
+    parent.children[1].style.color = 'orange';
+
+
+    // TODO: [firstElementChild,lastElementChild]
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+
+    // TODO: [child --> Parent] : {parentElement}
+    const dayOne = document.querySelector('.day');
+    // console.log(dayOne);
+    // console.log(dayOne.parentElement);
+
+
+    // TODO: [children --> children] : {nextElementSibling}
+    // console.log(dayOne.nextElementSibling);
+    
+
+    // TODO: [parent.childNodes] : nodeList <IMPORTANT>
+        console.log("Nodes : ", parent.childNodes);
+
+
+</script>
+
+</html>
