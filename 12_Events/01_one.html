@@ -43,14 +43,74 @@
 // }
 
 // TODO: Approach - 3 <Modern>  
-document.getElementById('owl').addEventListener('click',function(e){
-    console.log(e);
+// document.getElementById('owl').addEventListener('click',function(e){
+//     console.log(e);
+// },false)
+
+
+
+//TODO: Event Propagation 
+// false (default) : Event Bubbling
+// true : Event Capturing
+
+
+//TODO: false (default) : Event Bubbling
+// Selecting ul(parent of li)
+// document.getElementById('images').addEventListener('click',function(e){
+//     console.log('clicked inside ul');
+// },false)
+
+
+// Selecting li (child of ul)
+// document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log('owl clicked');
+    // },false)
+    
+    
+    // TODO: Explanation
+/*
+ul -> click -> clicked inside ul -> printed
+li(owl) -> click -> printed :
+1.owl clicked
+2.clicked inside ul
+
+Just like bubble niche se upar jata hai same like that 
+>> first child print hoga 
+>> after that Parent hoga
+
+??? : Jo bhi element/Script tracking bade elements ko inside se outside then wo Event propagation hota hai here, <Bubbling>
+*/
+
+
+// TODO: true : Event Capturing
+// Capturing goes from TOP -> BOTTOM
+// Parent -> Child
+
+// document.getElementById('images').addEventListener('click',function(e){
+//     console.log('clicked inside ul');
+// },true)
+
+
+// document.getElementById('owl').addEventListener('click',function(e){
+//     console.log('owl clicked');
+// },true)
+
+
+
+// TODO: Stop propagation 
+// owl pr click krne ke baad bubble hokar uppper na jaye 
+// There uses : (e)
+// e.stopPropagation();
+
+document.getElementById('images').addEventListener('click',function(e){
+    console.log('clicked inside ul');
 },false)
 
 
-
-
-
+document.getElementById('images').addEventListener('click',function(e){
+    console.log('owl clicked');
+    e.stopPropagation(); // now will no propagate
+},false)
 
 </script>
 
