@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event learning</title>
+</head>
+<body style="background-color: #414141;">
+
+    <li><a  style="color: aliceblue;" href="https://www.google.com" id="google">Google</a></li>
+
+</body>
+
+<script>
+
+// TODO: Change the default behaviour
+// e.preventDefault()
+
+// if we click : {Google} : 
+// default behaviour : after clicking google pr le jata hai 
+// 
+
+document.getElementById('google').addEventListener('click',function(e){
+    console.log('google clicked...');
+    e.preventDefault();
+},false)
+
+</script>
+
+</html>
