@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Async</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    
+    <h1>Learning Async Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="clear">Clear Console</button>
+</body>
+<script>
+
+const sayDate = function(str){
+    console.log(str, Date.now());
+}
+
+let intervalId;
+
+document.querySelector('#start').addEventListener('click',function(){
+    intervalId  = setInterval(sayDate,2000,"Hii");
+},false)
+
+document.querySelector('#stop').addEventListener('click',function(){
+    clearInterval(intervalId);
+    console.log('STOPPED');
+},false)
+
+
+// Code to clear console
+document.querySelector('#clear').addEventListener('click',function(){
+    console.clear();
+},false)
+
+</script>
+</html>
