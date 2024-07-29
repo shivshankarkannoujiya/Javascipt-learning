@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+table,
+th,
+td {
+  border: 1px solid #e7e7e7;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table{
+  width: 100%;
+}
+
+th {
+  height: 70px;
+}
+
+td {
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.project {
+  background-color: #1c1c1c;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.color {
+  color: aliceblue;
+  display: flex;
+  flex-direction: row;
+}
+
+.key{
+  font-size: 30px;
+  text-transform: uppercase;
+}
