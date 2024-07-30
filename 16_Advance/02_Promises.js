@@ -38,7 +38,6 @@ new Promise(function(resolve,reject){
 
 //! Third Promise
 // TODO: Passisng data into resolve()
-
 const promiseThree = new Promise(function(resolve,reject){
     setTimeout(function(){
         resolve({username : "Abhi", email:"abhi@gmail.com"})
