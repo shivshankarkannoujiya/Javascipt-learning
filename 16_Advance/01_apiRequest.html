@@ -5,7 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>api-request</title>
 </head>
-<body>
-    
+<body style="background-color: #414141; color: aliceblue;">
+    <h1>API REQUEST :  OLD WAY</h1>
+    <h2>Xml httpRequest</h2>
 </body>
+<script>
+
+    const requestUrl = "https://api.github.com/users/shivshankarkannoujiya";
+    const xhr =  new XMLHttpRequest();
+    xhr.open('GET',requestUrl);
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+
+        if (xhr.readyState === 4) {
+
+            const data = JSON.parse(this.responseText);
+            const avatarUrl = data.avatar_url;
+            const name = data.name;
+            const bio = data.bio;
+            
+
+            //Creating a card element
+            const card = document.createElement('div');
+
+            card.style.border = '1px solid #fff';
+            card.style.padding = '16px';
+            card.style.margin = '50px';
+            card.style.textAlign = 'center';
+            card.style.width = '200px';
+            card.style.boxShadow = '0 4px 8px 0 rgba(0, 0, 0, 0.2)';
+
+            // Creating an image element
+            const img = document.createElement('img');
+            img.src = avatarUrl;
+            img.alt = 'github-avatar';
+            img.style.width = '100%';
+            img.style.borderRadius = '50%';
+
+
+            // creating a name element
+            const nameElement = document.createElement('h3');
+            nameElement.textContent = name;
+
+
+            // Creating bio element
+            const bioElement = document.createElement('p');
+            bioElement.textContent = bio;
+
+            // Appending image,name,bio to card
+            card.appendChild(img);
+            card.appendChild(nameElement);
+            card.appendChild(bioElement);
+
+            // Appending card to body
+            document.body.appendChild(card)
+        }
+    }
+
+    xhr.send();
+
+</script>
 </html>
