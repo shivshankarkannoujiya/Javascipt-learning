@@ -1,0 +1,48 @@
+<html>
+
+    <style>
+        input{
+            padding: 10px;
+            width: 25%;
+            margin-left: 30%;
+            font-size: 16px;
+        }
+
+        button{
+            padding: 12px 30px;
+            margin-left: 30%;
+            width: 25%;
+            font-size: 18px;
+        }
+
+        #finalSum{
+            border: 1px solid #fff;
+            width: 23%;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-left: 30%;
+        }
+    </style>
+
+    <body style="background-color: #414141; color: aliceblue;">
+        <input id="firstNum" type="text" placeholder="First Number"> </br></br>
+        <input id="secNum" type="text" placeholder="Second Number"></br></br>
+        <button id="button">Calculate Sum</button></br></br>
+        <div id="finalSum"></div>
+    </body>
+
+    <script>
+        function populateDiv(){
+
+            const firstNumber = document.querySelector('#firstNum');
+            const secNumber = document.querySelector('#secNum');
+            const div = document.querySelector('#finalSum');
+            div.innerHTML = `Sum is : ${parseInt(firstNumber.value) + parseInt(secNumber.value)}`;    
+        }
+
+        document.querySelector('#button').addEventListener('click',populateDiv)
+    </script>
+
+</html>
