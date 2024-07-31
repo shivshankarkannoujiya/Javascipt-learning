@@ -1,0 +1,84 @@
+<html>
+
+    <style>
+        input{
+            padding: 10px;
+            width: 25%;
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        button{
+            padding: 12px 30px;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+    </style>
+
+    <body style="background-color: #414141; color: aliceblue;">
+        <input id="title" type="text" placeholder="Title"> </br></br>
+        <input id="description" type="text" placeholder="Description"></br></br>
+        <button id="button">Add Todo</button></br></br>
+
+        <div id="todos">
+            <!-- ! Wants to add after clicking button Add Todo -->
+            <!-- <div>
+                <div>Title of Todo - 1 </div>
+                <div>Description of Todo - 1 </div>
+                <button>Marks as done</button>
+            </div> -->
+        </div>
+    </body>
+
+
+
+    <script>
+
+        let globalId = 1;
+
+        function markAsDone(todoId){
+            const container = document.getElementById(todoId);
+            container.children[2].innerHTML = `Done!`;
+        }
+
+
+        function createChild(title, description, id){
+            
+            const Parent = document.createElement('div');
+            const addTitle = document.createElement('div');
+            addTitle.style.fontSize = '20px';
+            const addDescription = document.createElement('div');
+            addDescription.style.fontSize = '20px';
+            const addButton = document.createElement('button');
+            
+            // Adding contents
+            addTitle.innerHTML = title;
+            addDescription.innerHTML = description;
+            addButton.innerHTML = `Mark as Done`;
+            addButton.setAttribute('onclick', `markAsDone(${id})`);
+
+            // Appending Child 
+            Parent.appendChild(addTitle);
+            Parent.appendChild(addDescription);
+            Parent.appendChild(addButton);
+            Parent.setAttribute('id',id)
+
+            return Parent
+        }
+
+
+        function addTodo(){
+            const title = document.getElementById('title').value;
+            const description = document.getElementById('description').value;
+            const container = document.getElementById('todos');
+            container.appendChild(createChild(title,description,globalId++));
+        }
+
+        document.querySelector('#button').addEventListener('click',addTodo)
+    </script>
+
+    
+</html>
