@@ -1,5 +1,5 @@
 
-//TODO: Object literal : Nothing But creating an Object
+//TODO: Object literal : is Nothing But creating an Object
 
 const user = {
 
