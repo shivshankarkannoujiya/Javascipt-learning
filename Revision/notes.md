@@ -59,3 +59,43 @@ const person = peoples.find(p => p.name === 'Bob')
 console.log(person);
 
 ```
+
+## TODO: Handle Undefined
+#### If `find()` doesn't find any element that satisfies the condition, `it returns undefined`. It's important to `handle this case to avoid errors in your code`
+
+```javascript
+
+const number = [1,2,4,6,9,3];
+const getNumGreaterThanTen = number.find(num => num > 10)
+if (getNumGreaterThanTen === undefined) {
+    console.log(`No Element Found !`);
+}else{
+    console.log(`Ans is : ${getNumGreaterThanTen}`);
+    
+}
+
+```
+
+# Using `thisArg`
+- The `thisArg` parameter can be used to specify the value of this inside the callback function. 
+- This is useful if you need to access properties or methods of an object inside the callback.
+
+```javascript
+const array = [1,2,3,4];
+
+const Obj = {
+
+    threshold : 3,
+    isGreaterThanThreshold : function(element){
+        return element > this.threshold
+    }
+}
+
+const found = array.find(function(element){
+    return this.isGreaterThanThreshold(element)
+},Obj)
+
+console.log(found);
+
+```
+

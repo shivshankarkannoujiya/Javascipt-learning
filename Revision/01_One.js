@@ -33,4 +33,33 @@ const peoples = [
 ]
 
 const person = peoples.find(p => p.name === 'Bob')
-console.log(person);
+// console.log(person);
+
+
+// TODO: Handle Undefined
+// const number = [1,2,4,6,9,3];
+// const getNumGreaterThanTen = number.find(num => num > 10)
+// if (getNumGreaterThanTen === undefined) {
+//     console.log(`No Element Found !`);
+// }else{
+//     console.log(`Ans is : ${getNumGreaterThanTen}`);
+    
+// }
+
+
+// TODO: Using thisArgs
+const array = [1,2,3,4];
+
+const Obj = {
+
+    threshold : 3,
+    isGreaterThanThreshold : function(element){
+        return element > this.threshold
+    }
+}
+
+const found = array.find(function(element){
+    return this.isGreaterThanThreshold(element)
+},Obj)
+
+// console.log(found);
