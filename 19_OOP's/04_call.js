@@ -46,3 +46,4 @@ console.log(user)
  * Jisse ki function flush hoga but value nhi jayega 
  */
 
+// Call: Current Execution context kisi aur function ko pass kr deta hai
